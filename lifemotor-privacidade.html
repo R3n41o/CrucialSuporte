@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Privacidade - LifeMotor | Crucial Suporte</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        :root {
+            --cor-laranja: #FFA500;
+            --cor-preto: #1a1a1a;
+            --cor-cinza-escuro: #333;
+            --cor-cinza-claro: #f4f4f4;
+            --cor-branco: #ffffff;
+            --sombra: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        html { scroll-behavior: smooth; }
+        body { color: var(--cor-cinza-escuro); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .highlight { color: var(--cor-laranja); }
+
+        header {
+            background-color: var(--cor-branco);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--sombra);
+        }
+
+        .nav-bar { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.8rem; font-weight: 700; text-decoration: none; }
+        .logo a { color: var(--cor-preto); text-decoration: none; }
+        
+        .nav-list { list-style: none; display: flex; gap: 30px; }
+        .nav-link { text-decoration: none; color: var(--cor-cinza-escuro); font-weight: 600; transition: color 0.3s ease; }
+        .nav-link:hover, .nav-link.active { color: var(--cor-laranja); }
+        
+        .mobile-menu-icon { display: none; cursor: pointer; }
+        .mobile-menu-icon div { width: 32px; height: 2px; background: var(--cor-preto); margin: 8px; transition: 0.3s; }
+
+        /* --- Estilo da Página de Política --- */
+        .policy-section {
+            background-color: var(--cor-cinza-claro);
+            min-height: calc(100vh - 150px);
+            padding: 100px 0 80px 0;
+        }
+
+        .policy-container {
+            background-color: var(--cor-branco);
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 50px;
+            border-radius: 8px;
+            box-shadow: var(--sombra);
+        }
+
+        .policy-container h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        .policy-container .update-date {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+            font-size: 0.9rem;
+        }
+
+        .policy-container h2 {
+            font-size: 1.4rem;
+            color: var(--cor-preto);
+            margin-top: 30px;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--cor-cinza-claro);
+        }
+
+        .policy-container p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+            color: #444;
+            text-align: justify;
+        }
+
+        .policy-container ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .policy-container li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+            color: #444;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--cor-laranja);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 30px;
+            transition: opacity 0.3s;
+        }
+        .back-link:hover { opacity: 0.8; }
+
+        footer {
+            background-color: var(--cor-preto);
+            color: var(--cor-branco);
+            text-align: center;
+            padding: 40px 0;
+        }
+        .footer-logo { font-size: 2rem; font-weight: 700; margin-bottom: 20px; }
+        footer p { color: #ccc; }
+
+        @media (max-width: 768px) {
+            .nav-list {
+                position: absolute; top: 70px; right: 0; width: 50%; height: calc(100vh - 70px);
+                background: var(--cor-branco); flex-direction: column; align-items: center;
+                justify-content: space-around; transform: translateX(100%); transition: transform 0.3s ease-in;
+                box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+            }
+            .nav-list.active { transform: translateX(0); }
+            .mobile-menu-icon { display: block; }
+            .policy-container { padding: 30px 25px; }
+            .policy-container h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav class="container nav-bar">
+            <div class="logo">
+                <a href="index.html">Crucial<span class="highlight"> Suporte</span></a>
+            </div>
+            <ul class="nav-list">
+                <li><a href="index.html" class="nav-link">Início</a></li>
+                <li><a href="index.html#servicos" class="nav-link">Serviços</a></li>
+                <li><a href="lifemotor-privacidade.html" class="nav-link active">Softwares</a></li>
+                <li><a href="index.html#contato" class="nav-link">Contato</a></li>
+            </ul>
+            <div class="mobile-menu-icon">
+                <div></div><div></div><div></div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="policy-section">
+        <div class="container">
+            <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Voltar ao Site</a>
+            
+            <div class="policy-container">
+                <h1>Política de Privacidade <span class="highlight">LifeMotor</span></h1>
+                <p class="update-date">Última atualização: Maio de 2024</p>
+
+                <p>O <strong>LifeMotor</strong> nasceu para simplificar a vida de quem ama seu veículo. Nossa missão é ajudar você a organizar o histórico de manutenções, prever gastos futuros e nunca mais esquecer uma troca de óleo ou revisão importante. Seja para o seu carro, moto, bike ou até embarcação, o LifeMotor é o seu parceiro na estrada.</p>
+
+                <p>Esta Política de Privacidade descreve como coletamos, usamos e protegemos suas informações quando você utiliza nosso aplicativo móvel.</p>
+
+                <h2>1. Coleta de Dados</h2>
+                <p>Para garantir o funcionamento adequado das manutenções, alertas e sincronização na nuvem, coletamos os seguintes dados:</p>
+                <ul>
+                    <li><strong>Dados de Cadastro:</strong> Nome, endereço de e-mail, número de telefone e foto de perfil (opcional).</li>
+                    <li><strong>Dados do Veículo:</strong> Nome/Apelido, fabricante, modelo, placa, quilometragem/horas atuais e foto do veículo.</li>
+                    <li><strong>Dados de Manutenção:</strong> Descrição do serviço, oficina, data, custo, odômetro e fotos de notas fiscais/comprovantes.</li>
+                </ul>
+
+                <h2>2. Armazenamento na Nuvem</h2>
+                <p>Seus dados são sincronizados de forma segura via <strong>Google Firebase</strong> (Cloud Firestore e Authentication). Isso permite que você acesse suas informações de manutenção com segurança em qualquer dispositivo após o login.</p>
+
+                <h2>3. Serviços de Terceiros (Google AdMob)</h2>
+                <p>O LifeMotor é gratuito e contém anúncios fornecidos pelo <strong>Google AdMob</strong>. Para exibir anúncios relevantes, o AdMob pode coletar dados do dispositivo, como:</p>
+                <ul>
+                    <li>Identificadores únicos de dispositivo (ID de Publicidade do Google).</li>
+                    <li>Endereço IP aproximado.</li>
+                    <li>Informações do sistema operacional e navegador.</li>
+                </ul>
+                <p>Esses dados são utilizados estritamente para fins de publicidade e são regidos pela <a href="https://policies.google.com/privacy" target="_blank" style="color: var(--cor-laranja);">Política de Privacidade do Google</a>. Você pode optar por não receber anúncios personalizados nas configurações do seu dispositivo (Google Configurações de Anúncios).</p>
+
+                <h2>4. Permissões do Dispositivo</h2>
+                <p>O aplicativo solicita acesso aos seguintes recursos do seu celular apenas quando você decide usá-los ativamente:</p>
+                <ul>
+                    <li><strong>Câmera e Galeria de Fotos:</strong> Utilizamos essa permissão exclusivamente para que você possa tirar fotos ou selecionar imagens existentes de <em>notas fiscais</em> ou <em>comprovantes de manutenção</em>. O app <strong>não</strong> acessa outras fotos da sua galeria automaticamente, nem envia imagens sem a sua ação direta.</li>
+                    <li><strong>Notificações:</strong> Para alertá-lo sobre manutenções que estão próximas do vencimento ou já vencidas, baseadas nas datas e quilometragens que você cadastrou.</li>
+                </ul>
+
+                <h2>5. Responsabilidade do Usuário</h2>
+                <p>As datas, quilometragens e comprovantes inseridos no aplicativo são de total responsabilidade do usuário. O LifeMotor atua apenas como um assistente de organização e lembretes, não nos responsabilizando por informações incorretas inseridas pelo usuário.</p>
+
+                <h2>6. Compartilhamento e Segurança de Dados</h2>
+                <p>Seus dados de manutenção e perfil são privados e vinculados estritamente à sua conta pessoal autenticada. <strong>Não vendemos, alugamos ou compartilhamos suas informações pessoais com terceiros para fins marketing.</strong></p>
+                <p>A opção de "Transferir Veículo" (Exportar/Importar via JSON) serve apenas para backup feito por você, e o arquivo gerado não é armazenado em nossos servidores, sendo processado localmente no seu dispositivo.</p>
+
+                <h2>7. Exclusão de Dados e Conta</h2>
+                <p>Se você desejar remover todos os seus dados do nosso sistema, o aplicativo possui a opção <strong>"Excluir Conta"</strong> disponível nas configurações de perfil. Ao acionar essa função, seu perfil, veículos, histórico de manutenções e todas as fotos de notas fiscais associadas serão apagados de forma permanente e irreversível de nossos servidores.</p>
+
+                <h2>8. Contato</h2>
+                <p>Se você tiver dúvidas sobre esta política de privacidade ou sobre o tratamento dos seus dados no aplicativo LifeMotor, entre em contato conosco (desenvolvedores responsáveis) através do site Crucial Suporte:</p>
+                <ul>
+                    <li><strong>E-mail:</strong> <a href="mailto:crucialstorebr@gmail.com" style="color: var(--cor-laranja);">crucialstorebr@gmail.com</a></li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-logo">Crucial<span class="highlight"> Suporte</span></div>
+            <p>© 2025 Crucial Suporte. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenu = document.querySelector('.mobile-menu-icon');
+        const navList = document.querySelector('.nav-list');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        mobileMenu.addEventListener('click', () => {
+            navList.classList.toggle('active');
+        });
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (navList.classList.contains('active')) {
+                    navList.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
