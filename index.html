@@ -1,589 +1,260 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crucial Suporte - Soluções em TI para o seu Negócio</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-    <style>
-        /* --- Configurações Globais e Variáveis de Cor --- */
-        :root {
-            --cor-laranja: #FFA500;
-            --cor-preto: #1a1a1a;
-            --cor-cinza-escuro: #333;
-            --cor-cinza-claro: #f4f4f4;
-            --cor-branco: #ffffff;
-            --sombra: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            color: var(--cor-cinza-escuro);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        section {
-            padding: 80px 0;
-        }
-
-        h1,
-        h2,
-        h3 {
-            color: var(--cor-preto);
-        }
-
-        h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            font-size: 1.1rem;
-            color: #666;
-            margin-bottom: 60px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .highlight {
-            color: var(--cor-laranja);
-        }
-
-        /* --- Cabeçalho e Navegação --- */
-        header {
-            background-color: var(--cor-branco);
-            padding: 15px 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: var(--sombra);
-        }
-
-        .nav-bar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            text-decoration: none;
-        }
-
-        .logo a {
-            color: var(--cor-preto);
-            text-decoration: none;
-        }
-
-        .nav-list {
-            list-style: none;
-            display: flex;
-            gap: 30px;
-        }
-
-        .nav-link {
-            text-decoration: none;
-            color: var(--cor-cinza-escuro);
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-
-        .nav-link:hover {
-            color: var(--cor-laranja);
-        }
-
-        .mobile-menu-icon {
-            display: none;
-            cursor: pointer;
-        }
-
-        .mobile-menu-icon div {
-            width: 32px;
-            height: 2px;
-            background: var(--cor-preto);
-            margin: 8px;
-            transition: 0.3s;
-        }
-
-        /* --- Seção Hero (Principal) --- */
-        #inicio {
-            background-color: var(--cor-cinza-claro);
-            padding-top: 120px;
-            padding-bottom: 120px;
-        }
-
-        .hero-content {
-            text-align: center;
-        }
-
-        .hero-content h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-
-        .hero-content p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 30px auto;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background-color: var(--cor-laranja);
-            color: var(--cor-branco);
-            padding: 15px 35px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: background-color 0.3s ease;
-        }
-
-        .cta-button:hover {
-            background-color: #e69500;
-        }
-
-        /* --- Seção de Serviços --- */
-        .servicos-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .servico-card {
-            background-color: var(--cor-branco);
-            padding: 40px 30px;
-            text-align: center;
-            border-radius: 8px;
-            box-shadow: var(--sombra);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .servico-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-        }
-
-        .servico-card .icon {
-            font-size: 3rem;
-            color: var(--cor-laranja);
-            margin-bottom: 20px;
-        }
-
-        .servico-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 15px;
-        }
-
-        .servico-card p {
-            font-size: 1rem;
-            line-height: 1.6;
-            color: #666;
-        }
-
-        /* --- Seção Sobre / Diferenciais --- */
-        #sobre {
-            background-color: var(--cor-cinza-claro);
-        }
-
-        .sobre-content {
-            display: flex;
-            align-items: center;
-            gap: 50px;
-        }
-
-        .sobre-texto {
-            flex: 1;
-        }
-
-        .sobre-texto h2 {
-            text-align: left;
-            margin-bottom: 20px;
-        }
-
-        .sobre-texto p {
-            margin-bottom: 20px;
-            line-height: 1.7;
-        }
-
-        .diferenciais-lista li {
-            list-style: none;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-        }
-
-        .diferenciais-lista i {
-            color: var(--cor-laranja);
-            margin-right: 15px;
-            font-size: 1.2rem;
-        }
-
-        .sobre-imagem {
-            flex: 1;
-            text-align: center;
-        }
-
-        .sobre-imagem img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-        }
-
-        /* --- Seção de Contato --- */
-        .contato-wrapper {
-            display: flex;
-            gap: 50px;
-            background-color: var(--cor-branco);
-            padding: 50px;
-            border-radius: 8px;
-            box-shadow: var(--sombra);
-        }
-
-        .info-contato,
-        .form-contato {
-            flex: 1;
-        }
-
-        .info-contato h3 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-        }
-
-        .info-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 25px;
-        }
-
-        .info-item .icon {
-            font-size: 1.5rem;
-            color: var(--cor-laranja);
-            margin-right: 20px;
-            width: 40px;
-            text-align: center;
-        }
-
-        .info-item a {
-            text-decoration: none;
-            color: var(--cor-cinza-escuro);
-            transition: color 0.3s;
-        }
-
-        .info-item a:hover {
-            color: var(--cor-laranja);
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: 600;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border-radius: 5px;
-            border: 1px solid #ddd;
-            font-size: 1rem;
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            height: 150px;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--cor-laranja);
-        }
-
-        /* --- Rodapé --- */
-        footer {
-            background-color: var(--cor-preto);
-            color: var(--cor-branco);
-            text-align: center;
-            padding: 40px 0;
-        }
-
-        .footer-logo {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
-
-        .footer-logo .highlight {
-            color: var(--cor-laranja);
-        }
-
-        footer p {
-            color: #ccc;
-        }
-
-        /* --- Responsividade (para Celulares) --- */
-        @media (max-width: 768px) {
-            .nav-list {
-                position: absolute;
-                top: 70px;
-                right: 0;
-                width: 50%;
-                height: calc(100vh - 70px);
-                background: var(--cor-branco);
-                flex-direction: column;
-                align-items: center;
-                justify-content: space-around;
-                transform: translateX(100%);
-                transition: transform 0.3s ease-in;
-                box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
-            }
-
-            .nav-list.active {
-                transform: translateX(0);
-            }
-
-            .mobile-menu-icon {
-                display: block;
-            }
-
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-
-            section {
-                padding: 60px 0;
-            }
-
-            h2 {
-                font-size: 2rem;
-            }
-
-            .sobre-content {
-                flex-direction: column;
-            }
-
-            .sobre-imagem {
-                margin-top: 30px;
-            }
-
-            .sobre-texto h2 {
-                text-align: center;
-            }
-
-            .contato-wrapper {
-                flex-direction: column;
-                padding: 30px;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crucial Suporte - Soluções em TI para o seu Negócio</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>
+tailwind.config={theme:{extend:{fontFamily:{sans:['Poppins','sans-serif'],display:['Oswald','sans-serif']},colors:{laranja:'#FFA500','laranja-dark':'#e69500',preto:'#1a1a1a','cinza-esc':'#333','cinza-claro':'#f4f4f4'},keyframes:{fadeIn:{from:{opacity:'0'},to:{opacity:'1'}},slideIn:{from:{opacity:'0',transform:'translateY(30px)'},to:{opacity:'1',transform:'translateY(0)'}},blurIn:{from:{opacity:'0',filter:'blur(12px)'},to:{opacity:'1',filter:'blur(0)'}},blob:{'0%':{transform:'translate(0,0) scale(1)'},'33%':{transform:'translate(30px,-50px) scale(1.1)'},'66%':{transform:'translate(-20px,20px) scale(0.9)'},'100%':{transform:'translate(0,0) scale(1)'}}},animation:{fadeIn:'fadeIn 0.8s ease-out both',slideIn:'slideIn 0.8s cubic-bezier(0.16,1,0.3,1) both',blurIn:'blurIn 1s ease-out both',blob:'blob 7s infinite'}}}}
+</script>
+<style>
+.hl{color:#FFA500}
+.tgo{background:linear-gradient(135deg,#FFA500,#ff6b00);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.glass{background:rgba(255,255,255,.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.ns{background:rgba(255,255,255,.95)!important;backdrop-filter:blur(12px)!important;box-shadow:0 2px 8px rgba(0,0,0,.08)!important}
+.sr{opacity:0;transform:translateY(30px);transition:all .8s cubic-bezier(.16,1,.3,1)}.sr.visible{opacity:1;transform:translateY(0)}
+.ch{transition:all .3s ease}.ch:hover{transform:translateY(-8px);box-shadow:0 25px 50px -12px rgba(255,165,0,.15)}
+.mm{transform:translateX(100%);transition:transform .3s ease}.mm.open{transform:translateX(0)}
+::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:#f4f4f4}::-webkit-scrollbar-thumb{background:#FFA500;border-radius:3px}
+</style>
 </head>
+<body class="font-sans text-cinza-esc bg-white overflow-x-hidden">
 
-<body>
+<!-- NAV -->
+<nav id="nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/80 backdrop-blur-sm">
+<div class="max-w-7xl mx-auto px-6 lg:px-8">
+<div class="flex items-center justify-between h-16 lg:h-20">
+<a href="#inicio" class="flex items-center gap-1 group">
+<div class="w-10 h-10 rounded-2xl bg-laranja flex items-center justify-center shadow-md shadow-laranja/30 group-hover:scale-110 transition-transform"><i class="fas fa-headset text-white text-lg"></i></div>
+<span class="font-display font-bold text-xl tracking-tight uppercase ml-2">Crucial <span class="hl">Suporte</span></span>
+</a>
+<ul class="hidden md:flex items-center gap-8">
+<li><a href="#inicio" class="text-sm font-semibold text-cinza-esc/70 hover:text-laranja transition-colors">Início</a></li>
+<li><a href="#servicos" class="text-sm font-semibold text-cinza-esc/70 hover:text-laranja transition-colors">Serviços</a></li>
+<li><a href="#sobre" class="text-sm font-semibold text-cinza-esc/70 hover:text-laranja transition-colors">Sobre Nós</a></li>
+<li><a href="softwares.html" class="text-sm font-semibold text-cinza-esc/70 hover:text-laranja-dark transition-colors">Softwares</a></li>
+<li><a href="#contato" class="text-sm font-semibold text-cinza-esc/70 hover:text-laranja transition-colors">Contato</a></li>
+</ul>
+<div class="hidden md:flex items-center gap-3">
+<a href="#contato" class="text-xs font-bold uppercase tracking-wider bg-laranja text-white px-6 py-3 rounded-full hover:bg-laranja-dark transition-all shadow-md shadow-laranja/30">Fale Conosco</a>
+</div>
+<button onclick="toggleMenu()" class="md:hidden w-10 h-10 flex items-center justify-center rounded-xl hover:bg-gray-100"><i class="fas fa-bars text-xl text-preto" id="bi"></i></button>
+</div>
+</div>
+</nav>
 
-    <header>
-        <nav class="container nav-bar">
-            <div class="logo">
-                <a href="#inicio">Crucial<span class="highlight"> Suporte</span></a>
-            </div>
-                <ul class="nav-list">
-                    <li><a href="#inicio" class="nav-link">Início</a></li>
-                    <li><a href="#servicos" class="nav-link">Serviços</a></li>
-                    <li><a href="#sobre" class="nav-link">Sobre Nós</a></li>
-                    <li><a href="lifemotor-privacidade.html" class="nav-link">Softwares</a></li>
-                    <li><a href="#contato" class="nav-link">Contato</a></li>
-                </ul>
-            <div class="mobile-menu-icon">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-        </nav>
-    </header>
+<!-- Mobile Menu -->
+<div id="mm" class="mm fixed top-0 right-0 bottom-0 w-80 max-w-[85vw] bg-white z-[60] shadow-2xl">
+<div class="p-6">
+<div class="flex items-center justify-between mb-10">
+<span class="font-display font-bold text-lg tracking-tight uppercase">Menu</span>
+<button onclick="toggleMenu()" class="w-10 h-10 flex items-center justify-center rounded-xl hover:bg-gray-100"><i class="fas fa-times text-xl"></i></button>
+</div>
+<div class="flex flex-col gap-1">
+<a href="#inicio" onclick="toggleMenu()" class="text-base font-semibold text-cinza-esc/70 hover:text-laranja hover:bg-orange-50 px-4 py-3 rounded-xl transition-all">Início</a>
+<a href="#servicos" onclick="toggleMenu()" class="text-base font-semibold text-cinza-esc/70 hover:text-laranja hover:bg-orange-50 px-4 py-3 rounded-xl transition-all">Serviços</a>
+<a href="#sobre" onclick="toggleMenu()" class="text-base font-semibold text-cinza-esc/70 hover:text-laranja hover:bg-orange-50 px-4 py-3 rounded-xl transition-all">Sobre Nós</a>
+<a href="softwares.html" class="text-base font-semibold text-laranja bg-orange-50 px-4 py-3 rounded-xl">Softwares</a>
+<a href="#contato" onclick="toggleMenu()" class="text-base font-semibold text-cinza-esc/70 hover:text-laranja hover:bg-orange-50 px-4 py-3 rounded-xl transition-all">Contato</a>
+</div>
+<div class="mt-8"><a href="#contato" onclick="toggleMenu()" class="block w-full text-center text-xs font-bold uppercase tracking-wider bg-laranja text-white px-6 py-3 rounded-full hover:bg-laranja-dark transition-all">Fale Conosco</a></div>
+</div>
+</div>
+<div id="mo" onclick="toggleMenu()" class="fixed inset-0 bg-black/30 z-[55] hidden"></div>
 
-    <main>
-        <section id="inicio">
-            <div class="container hero-content">
-                <h1>Soluções de TI <span class="highlight">Confiáveis</span> para o Seu Negócio</h1>
-                <p>Otimizamos sua infraestrutura tecnológica para que você possa focar no que realmente importa: o
-                    crescimento da sua empresa.</p>
-                <a href="#contato" class="cta-button">Fale com um Especialista</a>
-            </div>
-        </section>
+<!-- HERO -->
+<section id="inicio" class="relative min-h-screen flex items-center overflow-hidden bg-cinza-claro">
+<div class="absolute top-20 left-10 w-72 h-72 bg-orange-200 rounded-full blur-3xl animate-blob"></div>
+<div class="absolute bottom-20 right-10 w-96 h-96 bg-amber-200/30 rounded-full blur-3xl animate-blob" style="animation-delay:2s"></div>
+<div class="absolute top-1/2 left-1/3 w-64 h-64 bg-orange-100/40 rounded-full blur-3xl animate-blob" style="animation-delay:4s"></div>
+<div class="relative max-w-7xl mx-auto px-6 lg:px-8 pt-28 pb-20 w-full text-center">
+<span class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-cinza-esc/50 bg-laranja/10 border border-laranja/20 px-4 py-2 rounded-full mb-6 animate-fadeIn">
+<i class="fas fa-bolt text-laranja text-sm"></i> Soluções em TI
+</span>
+<h1 class="font-display font-bold text-4xl sm:text-5xl lg:text-7xl xl:text-8xl leading-[0.85] tracking-tighter uppercase animate-slideIn" style="animation-delay:100ms">
+<span class="block">Soluções de TI</span>
+<span class="block tgo">Confiáveis</span>
+<span class="block">para seu Negócio</span>
+</h1>
+<p class="mt-6 text-lg text-cinza-esc/50 font-light leading-relaxed max-w-2xl mx-auto animate-slideIn" style="animation-delay:200ms">
+Otimizamos sua infraestrutura tecnológica para que você possa focar no que realmente importa: o crescimento da sua empresa.
+</p>
+<div class="mt-10 flex flex-wrap justify-center gap-4 animate-slideIn" style="animation-delay:300ms">
+<a href="#contato" class="group inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider bg-laranja text-white px-8 py-4 rounded-full hover:bg-laranja-dark transition-all shadow-lg shadow-laranja/30">
+Fale com um Especialista <i class="fas fa-arrow-right text-sm group-hover:translate-x-1 transition-transform"></i>
+</a>
+<a href="#servicos" class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider border-2 border-preto/15 text-preto px-8 py-4 rounded-full hover:border-laranja hover:text-laranja transition-all">
+<i class="fas fa-th-large text-sm"></i> Ver Serviços
+</a>
+</div>
+<div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto animate-fadeIn" style="animation-delay:500ms">
+<div class="text-center"><div class="font-display font-bold text-2xl lg:text-3xl text-preto">500+</div><p class="text-xs text-cinza-esc/40 mt-1">Clientes Atendidos</p></div>
+<div class="text-center"><div class="font-display font-bold text-2xl lg:text-3xl text-preto">99%</div><p class="text-xs text-cinza-esc/40 mt-1">Uptime Garantido</p></div>
+<div class="text-center"><div class="font-display font-bold text-2xl lg:text-3xl text-preto">24/7</div><p class="text-xs text-cinza-esc/40 mt-1">Suporte Disponível</p></div>
+<div class="text-center"><div class="font-display font-bold text-2xl lg:text-3xl text-preto">10+</div><p class="text-xs text-cinza-esc/40 mt-1">Anos de Experiência</p></div>
+</div>
+</div>
+<div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-fadeIn" style="animation-delay:1s">
+<span class="text-[10px] uppercase tracking-widest text-cinza-esc/30 font-medium">Rolar</span>
+<div class="w-5 h-8 border-2 border-cinza-esc/15 rounded-full flex items-start justify-center p-1"><div class="w-1 h-2 bg-laranja/50 rounded-full animate-bounce"></div></div>
+</div>
+</section>
 
-        <section id="servicos">
-            <div class="container">
-                <h2>Nossos Serviços</h2>
-                <p class="section-subtitle">Oferecemos um portfólio completo de serviços para garantir a estabilidade,
-                    segurança e eficiência do seu ambiente de TI.</p>
+<!-- SERVIÇOS -->
+<section id="servicos" class="py-24 lg:py-32 bg-white">
+<div class="max-w-7xl mx-auto px-6 lg:px-8">
+<div class="text-center max-w-2xl mx-auto mb-16 sr">
+<span class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-laranja mb-4"><i class="fas fa-cogs text-sm"></i> Serviços</span>
+<h2 class="font-display font-bold text-3xl lg:text-5xl tracking-tighter uppercase">Nossos <span class="tgo">Serviços</span></h2>
+<p class="mt-4 text-cinza-esc/50 font-light text-lg">Portfólio completo para garantir estabilidade, segurança e eficiência do seu ambiente de TI.</p>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+<div class="bg-white rounded-3xl p-8 shadow-sm border border-gray-100 ch sr text-center group">
+<div class="w-16 h-16 bg-orange-50 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:bg-laranja/10 transition-all"><i class="fas fa-desktop text-2xl text-laranja"></i></div>
+<h3 class="font-display font-semibold text-lg tracking-tight uppercase">Desktops e Notebooks</h3>
+<p class="mt-3 text-cinza-esc/50 font-light text-sm leading-relaxed">Manutenção, correção de problemas em sistemas operacionais e instalação de softwares essenciais.</p>
+</div>
+<div class="bg-white rounded-3xl p-8 shadow-sm border border-gray-100 ch sr text-center group" style="transition-delay:100ms">
+<div class="w-16 h-16 bg-orange-50 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:bg-laranja/10 transition-all"><i class="fas fa-network-wired text-2xl text-laranja"></i></div>
+<h3 class="font-display font-semibold text-lg tracking-tight uppercase">Infraestrutura de Redes</h3>
+<p class="mt-3 text-cinza-esc/50 font-light text-sm leading-relaxed">Configuração e gerenciamento de roteadores, switches e servidores. Rede estável e segura.</p>
+</div>
+<div class="bg-white rounded-3xl p-8 shadow-sm border border-gray-100 ch sr text-center group" style="transition-delay:200ms">
+<div class="w-16 h-16 bg-orange-50 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:bg-laranja/10 transition-all"><i class="fas fa-server text-2xl text-laranja"></i></div>
+<h3 class="font-display font-semibold text-lg tracking-tight uppercase">Serviços de Domínio</h3>
+<p class="mt-3 text-cinza-esc/50 font-light text-sm leading-relaxed">Implantação de Active Directory, DHCP e serviços de rede para centralizar e aumentar a segurança.</p>
+</div>
+<div class="bg-white rounded-3xl p-8 shadow-sm border border-gray-100 ch sr text-center group" style="transition-delay:300ms">
+<div class="w-16 h-16 bg-orange-50 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:bg-laranja/10 transition-all"><i class="fas fa-robot text-2xl text-laranja"></i></div>
+<h3 class="font-display font-semibold text-lg tracking-tight uppercase">Otimização e Automação</h3>
+<p class="mt-3 text-cinza-esc/50 font-light text-sm leading-relaxed">Análise de processos, correções de falhas e automações para aumentar a produtividade.</p>
+</div>
+</div>
+</div>
+</section>
 
-                <div class="servicos-grid">
-                    <div class="servico-card">
-                        <div class="icon"><i class="fas fa-desktop"></i></div>
-                        <h3>Suporte a Desktops e Notebooks</h3>
-                        <p>Manutenção, correção de problemas em sistemas operacionais (Windows, Linux, macOS) e
-                            instalação de softwares essenciais para sua equipe.</p>
-                    </div>
-                    <div class="servico-card">
-                        <div class="icon"><i class="fas fa-network-wired"></i></div>
-                        <h3>Infraestrutura de Redes</h3>
-                        <p>Configuração e gerenciamento de roteadores, switches e servidores. Garantimos uma rede
-                            estável, rápida e segura para sua empresa.</p>
-                    </div>
-                    <div class="servico-card">
-                        <div class="icon"><i class="fas fa-server"></i></div>
-                        <h3>Serviços de Domínio</h3>
-                        <p>Implantação e administração de Active Directory (AD), DHCP e outros serviços de rede para
-                            centralizar o gerenciamento e aumentar a segurança.</p>
-                    </div>
-                    <div class="servico-card">
-                        <div class="icon"><i class="fas fa-cogs"></i></div>
-                        <h3>Otimização e Automação</h3>
-                        <p>Análise de processos, correções de falhas e desenvolvimento de automações para aumentar a
-                            produtividade e reduzir tarefas manuais repetitivas.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+<!-- SOBRE -->
+<section id="sobre" class="py-24 lg:py-32 bg-cinza-claro relative overflow-hidden">
+<div class="absolute top-0 right-0 w-80 h-80 bg-orange-100/50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+<div class="relative max-w-7xl mx-auto px-6 lg:px-8">
+<div class="grid lg:grid-cols-2 gap-16 items-center">
+<div class="sr">
+<span class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-laranja mb-4"><i class="fas fa-star text-sm"></i> Diferenciais</span>
+<h2 class="font-display font-bold text-3xl lg:text-4xl tracking-tighter uppercase leading-tight">Por que escolher a<br><span class="tgo">Crucial Suporte</span>?</h2>
+<p class="mt-6 text-cinza-esc/50 font-light leading-relaxed">Entendemos que cada negócio é único. Não oferecemos apenas suporte técnico, mas uma parceria estratégica para garantir que a tecnologia trabalhe a favor dos seus objetivos.</p>
+<div class="mt-8 space-y-5">
+<div class="flex items-start gap-4"><div class="w-10 h-10 bg-laranja/10 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5"><i class="fas fa-check-circle text-laranja"></i></div><div><strong class="text-sm">Atendimento Personalizado:</strong><p class="text-sm text-cinza-esc/50 mt-1">Soluções pensadas para as necessidades da sua empresa.</p></div></div>
+<div class="flex items-start gap-4"><div class="w-10 h-10 bg-laranja/10 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5"><i class="fas fa-check-circle text-laranja"></i></div><div><strong class="text-sm">Expertise Técnica:</strong><p class="text-sm text-cinza-esc/50 mt-1">Equipe qualificada para lidar com desafios de TI.</p></div></div>
+<div class="flex items-start gap-4"><div class="w-10 h-10 bg-laranja/10 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5"><i class="fas fa-check-circle text-laranja"></i></div><div><strong class="text-sm">Foco em Prevenção:</strong><p class="text-sm text-cinza-esc/50 mt-1">Atuamos de forma proativa para evitar problemas.</p></div></div>
+<div class="flex items-start gap-4"><div class="w-10 h-10 bg-laranja/10 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5"><i class="fas fa-check-circle text-laranja"></i></div><div><strong class="text-sm">Agilidade e Confiança:</strong><p class="text-sm text-cinza-esc/50 mt-1">Respostas rápidas e um parceiro de TI confiável.</p></div></div>
+</div>
+</div>
+<div class="sr" style="transition-delay:200ms">
+<div class="relative rounded-3xl overflow-hidden shadow-2xl shadow-orange-900/10">
+<img src="000000001.png" class="w-full h-[400px] lg:h-[520px] object-cover" alt="Equipe de TI">
+<div class="absolute inset-0 bg-gradient-to-t from-preto/30 to-transparent"></div>
+</div>
+<div class="absolute -bottom-4 -left-4 lg:left-auto lg:-right-4 glass rounded-2xl p-5 shadow-xl max-w-[200px]">
+<div class="flex items-center gap-2 mb-1"><i class="fas fa-shield-halved text-laranja text-sm"></i><span class="font-display font-bold text-xs tracking-tight uppercase">Missão</span></div>
+<p class="text-[11px] text-cinza-esc/60 leading-relaxed">Tecnologia que trabalha a favor dos seus objetivos.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
 
-        <section id="sobre">
-            <div class="container sobre-content">
-                <div class="sobre-texto">
-                    <h2>Por que escolher a <span class="highlight">Crucial Suporte</span>?</h2>
-                    <p>Entendemos que cada negócio é único. Por isso, não oferecemos apenas suporte técnico, mas uma
-                        parceria estratégica para garantir que a tecnologia trabalhe a favor dos seus objetivos.</p>
-                    <ul class="diferenciais-lista">
-                        <li><i class="fas fa-check-circle"></i> <strong>Atendimento Personalizado:</strong> Soluções
-                            pensadas especificamente para as necessidades da sua empresa.</li>
-                        <li><i class="fas fa-check-circle"></i> <strong>Expertise Técnica:</strong> Equipe qualificada e
-                            pronta para lidar com os mais diversos desafios de TI.</li>
-                        <li><i class="fas fa-check-circle"></i> <strong>Foco em Prevenção:</strong> Atuamos de forma
-                            proativa para evitar problemas antes que eles aconteçam.</li>
-                        <li><i class="fas fa-check-circle"></i> <strong>Agilidade e Confiança:</strong> Respostas
-                            rápidas e um parceiro de TI com quem você pode contar.</li>
-                    </ul>
-                </div>
-                <div class="sobre-imagem">
-                    <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?q=80&w=1170"
-                        alt="Equipe de Suporte de TI trabalhando">
-                </div>
-            </div>
-        </section>
+<!-- CONTATO -->
+<section id="contato" class="py-24 lg:py-32 bg-white">
+<div class="max-w-7xl mx-auto px-6 lg:px-8">
+<div class="text-center max-w-2xl mx-auto mb-16 sr">
+<span class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-laranja mb-4"><i class="fas fa-envelope text-sm"></i> Contato</span>
+<h2 class="font-display font-bold text-3xl lg:text-5xl tracking-tighter uppercase">Entre em <span class="tgo">Contato</span></h2>
+<p class="mt-4 text-cinza-esc/50 font-light text-lg">Estamos prontos para entender seu desafio e oferecer a melhor solução.</p>
+</div>
+<div class="bg-white rounded-3xl shadow-xl shadow-black/5 border border-gray-100 overflow-hidden sr">
+<div class="grid lg:grid-cols-2">
+<!-- Info -->
+<div class="bg-preto p-10 lg:p-12 text-white relative overflow-hidden">
+<div class="absolute top-0 right-0 w-64 h-64 bg-laranja/10 rounded-full blur-3xl"></div>
+<div class="relative z-10">
+<div class="w-12 h-12 bg-laranja/20 rounded-2xl flex items-center justify-center mb-8"><i class="fas fa-headset text-laranja text-xl"></i></div>
+<h3 class="font-display font-bold text-2xl tracking-tight uppercase mb-2">Informações</h3>
+<p class="text-white/50 text-sm mb-10">Fale conosco, será um prazer atendê-lo!</p>
+<div class="space-y-8">
+<div class="flex items-start gap-4">
+<div class="w-11 h-11 bg-green-500/20 rounded-xl flex items-center justify-center flex-shrink-0"><i class="fab fa-whatsapp text-green-400 text-lg"></i></div>
+<div><p class="text-white/40 text-xs uppercase tracking-wider font-semibold">WhatsApp</p><a href="https://api.whatsapp.com/send?phone=5581989841412" target="_blank" class="text-white hover:text-laranja transition-colors font-medium">(81) 98984-1412</a></div>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-11 h-11 bg-laranja/20 rounded-xl flex items-center justify-center flex-shrink-0"><i class="fas fa-envelope text-laranja text-lg"></i></div>
+<div><p class="text-white/40 text-xs uppercase tracking-wider font-semibold">Email</p><a href="mailto:crucialstorebr@gmail.com" class="text-white hover:text-laranja transition-colors font-medium text-sm">crucialstorebr@gmail.com</a></div>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-11 h-11 bg-blue-500/20 rounded-xl flex items-center justify-center flex-shrink-0"><i class="fas fa-map-marker-alt text-blue-400 text-lg"></i></div>
+<div><p class="text-white/40 text-xs uppercase tracking-wider font-semibold">Endereço</p><p class="text-white/70 text-sm">Planalto Boa Esperança, João Pessoa - PB</p></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Form -->
+<div class="p-10 lg:p-12">
+<h3 class="font-display font-bold text-xl tracking-tight uppercase mb-8">Envie uma Mensagem</h3>
+<form action="https://formspree.io/f/mwpnpnbz" method="POST" class="space-y-5">
+<div><label class="text-xs font-bold uppercase tracking-wider text-cinza-esc/50 mb-1.5 block">Seu Nome</label><input type="text" name="nome" required class="w-full px-4 py-3.5 bg-cinza-claro border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-laranja/20 focus:border-laranja transition-all" placeholder="Digite seu nome"></div>
+<div><label class="text-xs font-bold uppercase tracking-wider text-cinza-esc/50 mb-1.5 block">Seu Email</label><input type="email" name="email" required class="w-full px-4 py-3.5 bg-cinza-claro border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-laranja/20 focus:border-laranja transition-all" placeholder="seu@email.com"></div>
+<div><label class="text-xs font-bold uppercase tracking-wider text-cinza-esc/50 mb-1.5 block">Sua Mensagem</label><textarea name="mensagem" required rows="5" class="w-full px-4 py-3.5 bg-cinza-claro border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-laranja/20 focus:border-laranja transition-all resize-none" placeholder="Descreva seu desafio..."></textarea></div>
+<input type="hidden" name="_next" value="obrigado.html">
+<button type="submit" class="w-full text-xs font-bold uppercase tracking-wider bg-laranja text-white py-4 rounded-xl hover:bg-laranja-dark transition-all shadow-lg shadow-laranja/30 flex items-center justify-center gap-2">Enviar Mensagem <i class="fas fa-paper-plane"></i></button>
+</form>
+</div>
+</div>
+</div>
+</div>
+</section>
 
-        <section id="contato">
-            <div class="container">
-                <h2>Entre em Contato</h2>
-                <p class="section-subtitle">Estamos prontos para entender seu desafio e oferecer a melhor solução. Envie
-                    uma mensagem ou entre em contato pelos nossos canais.</p>
+<!-- FOOTER -->
+<footer class="bg-preto border-t border-white/5 py-16">
+<div class="max-w-7xl mx-auto px-6 lg:px-8">
+<div class="grid md:grid-cols-3 gap-12">
+<div>
+<div class="flex items-center gap-2 mb-4">
+<div class="w-10 h-10 rounded-2xl bg-laranja flex items-center justify-center"><i class="fas fa-headset text-white text-lg"></i></div>
+<span class="font-display font-bold text-xl tracking-tight uppercase text-white">Crucial <span class="text-laranja">Suporte</span></span>
+</div>
+<p class="text-white/40 font-light text-sm leading-relaxed max-w-sm">Soluções de TI confiáveis para o seu negócio. Seu parceiro estratégico em tecnologia.</p>
+</div>
+<div>
+<h4 class="text-xs font-bold uppercase tracking-widest text-white/30 mb-4">Navegação</h4>
+<ul class="space-y-3">
+<li><a href="#inicio" class="text-sm text-white/50 hover:text-laranja transition-colors">Início</a></li>
+<li><a href="#servicos" class="text-sm text-white/50 hover:text-laranja transition-colors">Serviços</a></li>
+<li><a href="#sobre" class="text-sm text-white/50 hover:text-laranja transition-colors">Sobre Nós</a></li>
+<li><a href="softwares.html" class="text-sm text-white/50 hover:text-laranja transition-colors">Softwares</a></li>
+<li><a href="#contato" class="text-sm text-white/50 hover:text-laranja transition-colors">Contato</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-xs font-bold uppercase tracking-widest text-white/30 mb-4">Contato</h4>
+<ul class="space-y-3">
+<li><a href="https://api.whatsapp.com/send?phone=5581989841412" target="_blank" class="text-sm text-white/50 hover:text-laranja transition-colors"><i class="fab fa-whatsapp mr-2 text-green-400"></i>(81) 98984-1412</a></li>
+<li><a href="mailto:crucialstorebr@gmail.com" class="text-sm text-white/50 hover:text-laranja transition-colors"><i class="fas fa-envelope mr-2 text-laranja/60"></i>crucialstorebr@gmail.com</a></li>
+</ul>
+</div>
+</div>
+<div class="mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
+<p class="text-xs text-white/30">&copy; 2025 Crucial Suporte. Todos os direitos reservados.</p>
+<p class="text-xs text-white/20">Feito com <i class="fas fa-heart text-laranja text-[10px]"></i> em João Pessoa - PB</p>
+</div>
+</div>
+</footer>
 
-                <div class="contato-wrapper">
-                    <div class="info-contato">
-                        <h3>Informações de Contato</h3>
-                        <p>Fale conosco, será um prazer atendê-lo!</p>
-                        <br>
-                        <div class="info-item">
-                            <div class="icon"><i class="fab fa-whatsapp"></i></div>
-                            <div>
-                                <strong>WhatsApp</strong><br>
-                                <a href="https://api.whatsapp.com/send?phone=5581989841412" target="_blank"
-                                    rel="noopener">(81)98984-1412</a>
-                            </div>
-                        </div>
-                        <div class="info-item">
-                            <div class="icon"><i class="fas fa-envelope"></i></div>
-                            <div>
-                                <strong>Email</strong><br>
-                                <a href="mailto:crucialstorebr@gmail.com">crucialstorebr@gmail.com</a>
-                            </div>
-                        </div>
-                        <div class="info-item">
-                            <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
-                            <div>
-                                <strong>Endereço</strong><br>
-                                <span>Planalto Boa Esperança, João Pessoa - Paraíba</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-contato">
-                        <h3>Envie uma Mensagem</h3>
-                        <form action="https://formspree.io/f/mwpnpnbz" method="POST">
-                            <div class="form-group">
-                                <label for="nome">Seu Nome</label>
-                                <input type="text" id="nome" name="nome" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Seu Email</label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="mensagem">Sua Mensagem</label>
-                                <textarea id="mensagem" name="mensagem" required></textarea>
-                            </div>
-                            <input type="hidden" name="_next" value="obrigado.html"> <button type="submit" class="cta-button">Enviar Mensagem</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <div class="footer-logo">Crucial<span class="highlight"> Suporte</span></div>
-            <p>© 2025 Crucial Suporte. Todos os direitos reservados.</p>
-        </div>
-    </footer>
-
-    <script>
-        const mobileMenu = document.querySelector('.mobile-menu-icon');
-        const navList = document.querySelector('.nav-list');
-        const navLinks = document.querySelectorAll('.nav-link');
-
-        mobileMenu.addEventListener('click', () => {
-            navList.classList.toggle('active');
-        });
-
-        // Fecha o menu ao clicar em um link
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                if (navList.classList.contains('active')) {
-                    navList.classList.remove('active');
-                }
-            });
-        });
-    </script>
+<script>
+const nav=document.getElementById('nav');window.addEventListener('scroll',()=>{nav.classList.toggle('ns',window.scrollY>50)});
+function toggleMenu(){const m=document.getElementById('mm'),o=document.getElementById('mo'),i=document.getElementById('bi'),open=m.classList.contains('open');if(open){m.classList.remove('open');o.classList.add('hidden');i.className='fas fa-bars text-xl text-preto';document.body.style.overflow=''}else{m.classList.add('open');o.classList.remove('hidden');i.className='fas fa-times text-xl text-preto';document.body.style.overflow='hidden'}}
+const srEls=document.querySelectorAll('.sr');const srObs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');srObs.unobserve(e.target)}})},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});srEls.forEach(el=>srObs.observe(el));
+</script>
 </body>
-
 </html>

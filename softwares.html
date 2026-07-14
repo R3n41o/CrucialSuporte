@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nossos Softwares - Crucial Suporte</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+<script>
+tailwind.config={theme:{extend:{fontFamily:{sans:['Poppins','sans-serif'],display:['Oswald','sans-serif']},colors:{brand:'#F7C71A','brand-dark':'#D4A90A',dark:'#1a1a1a','app-bg':'#E0E0E0','cor-laranja':'#FFA500','cor-preto':'#1a1a1a','cor-cinza-claro':'#f4f4f4'},keyframes:{fadeIn:{from:{opacity:'0'},to:{opacity:'1'}},slideIn:{from:{opacity:'0',transform:'translateY(30px)'},to:{opacity:'1',transform:'translateY(0)'}},blob:{'0%':{transform:'translate(0,0) scale(1)'},'33%':{transform:'translate(30px,-50px) scale(1.1)'},'66%':{transform:'translate(-20px,20px) scale(0.9)'},'100%':{transform:'translate(0,0) scale(1)'}}},animation:{fadeIn:'fadeIn 0.8s ease-out both',slideIn:'slideIn 0.8s cubic-bezier(0.16,1,0.3,1) both',blob:'blob 7s infinite'}}}}
+</script>
+<style>
+:root{--cor-laranja:#FFA500;--cor-preto:#1a1a1a;--cor-cinza-escuro:#333;--cor-cinza-claro:#f4f4f4;--cor-branco:#ffffff;--sombra:0 4px 8px rgba(0,0,0,.1)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+.tgb{background:linear-gradient(135deg,#F7C71A,#FF9500);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.ns{background:rgba(255,255,255,.95)!important;backdrop-filter:blur(12px)!important;box-shadow:0 2px 8px rgba(0,0,0,.08)!important}
+.sr{opacity:0;transform:translateY(30px);transition:all .8s cubic-bezier(.16,1,.3,1)}.sr.visible{opacity:1;transform:translateY(0)}
+.sw{transition:all .3s ease}.sw:hover{transform:translateY(-8px);box-shadow:0 25px 50px -12px rgba(0,0,0,.15)}
+.sw:hover .sw-img{transform:scale(1.05)}.sw-img{transition:transform .7s ease}
+.highlight{color:var(--cor-laranja)}
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
+.nav-list{list-style:none;display:flex;gap:30px}
+.nav-link{text-decoration:none;color:var(--cor-cinza-escuro);font-weight:600;transition:color .3s ease;font-size:.95rem}
+.nav-link:hover{color:var(--cor-laranja)}
+.cta-button{display:inline-block;background-color:var(--cor-laranja);color:var(--cor-branco);padding:15px 35px;border-radius:5px;text-decoration:none;font-weight:600;font-size:1.1rem;transition:background-color .3s ease}
+.cta-button:hover{background-color:#e69500}
+@media(max-width:768px){.nav-list{position:absolute;top:70px;right:0;width:50%;height:calc(100vh - 70px);background:var(--cor-branco);flex-direction:column;align-items:center;justify-content:space-around;transform:translateX(100%);transition:transform .3s ease-in;box-shadow:-2px 0 5px rgba(0,0,0,.1)}.nav-list.active{transform:translateX(0)}.mobile-menu-icon{display:block!important}}
+</style>
+</head>
+<body style="font-family:'Poppins',sans-serif;color:var(--cor-cinza-escuro)">
+
+<!-- NAV -->
+<header style="background:var(--cor-branco);padding:15px 0;position:sticky;top:0;z-index:1000;box-shadow:var(--sombra)">
+<nav class="container" style="display:flex;justify-content:space-between;align-items:center">
+<div style="font-size:1.8rem;font-weight:700"><a href="index.html" style="color:var(--cor-preto);text-decoration:none">Crucial<span class="highlight"> Suporte</span></a></div>
+<ul class="nav-list" id="navList">
+<li><a href="index.html" class="nav-link">Início</a></li>
+<li><a href="index.html#servicos" class="nav-link">Serviços</a></li>
+<li><a href="index.html#sobre" class="nav-link">Sobre Nós</a></li>
+<li><a href="softwares.html" class="nav-link" style="color:var(--cor-laranja)">Softwares</a></li>
+<li><a href="index.html#contato" class="nav-link">Contato</a></li>
+</ul>
+<div class="mobile-menu-icon" style="display:none;cursor:pointer" onclick="document.getElementById('navList').classList.toggle('active')">
+<div style="width:32px;height:2px;background:var(--cor-preto);margin:8px;transition:.3s"></div>
+<div style="width:32px;height:2px;background:var(--cor-preto);margin:8px;transition:.3s"></div>
+<div style="width:32px;height:2px;background:var(--cor-preto);margin:8px;transition:.3s"></div>
+</div>
+</nav>
+</header>
+
+<!-- HERO -->
+<section style="background:var(--cor-cinza-claro);padding:120px 0 80px;position:relative;overflow:hidden">
+<div style="position:absolute;top:20px;left:40px;width:300px;height:300px;background:rgba(247,199,26,.15);border-radius:50%;filter:blur(80px);animation:blob 7s infinite"></div>
+<div style="position:absolute;bottom:0;right:40px;width:350px;height:350px;background:rgba(255,165,0,.1);border-radius:50%;filter:blur(80px);animation:blob 7s infinite;animation-delay:3s"></div>
+<div class="container" style="text-align:center;position:relative;z-index:1">
+<span class="animate-fadeIn" style="display:inline-flex;align-items:center;gap:8px;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(26,26,26,.6);background:rgba(247,199,26,.2);border:1px solid rgba(247,199,26,.3);padding:8px 16px;border-radius:9999px;margin-bottom:24px">
+<i class="fas fa-box" style="color:#D4A90A"></i> Catálogo
+</span>
+<h1 class="font-display animate-slideIn" style="font-size:clamp(2.5rem,6vw,4.5rem);font-weight:700;line-height:.9;text-transform:uppercase;letter-spacing:-.02em;color:var(--cor-preto)">Nossos<br><span class="tgb">Softwares</span></h1>
+<p class="animate-slideIn" style="animation-delay:200ms;margin-top:24px;font-size:1.1rem;color:rgba(26,26,26,.5);max-width:500px;margin-left:auto;margin-right:auto">Conheça as soluções que desenvolvemos para facilitar seu dia a dia.</p>
+</div>
+</section>
+
+<!-- CATALOGO -->
+<section style="padding:80px 0;background:var(--cor-branco)" id="catalogo">
+<div class="container">
+
+<!-- LifeMotor Card Destaque -->
+<div class="sr" style="margin-bottom:48px">
+<a href="landingPages.html" style="text-decoration:none;color:inherit;display:block">
+<div class="sw" style="background:var(--cor-preto);border-radius:24px;overflow:hidden;position:relative">
+<div style="display:grid;grid-template-columns:1fr 1fr">
+<div style="position:relative;min-height:300px;overflow:hidden">
+<img src="2076782164933873664.png" class="sw-img" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.35" alt="LifeMotor">
+<div style="position:absolute;inset:0;background:linear-gradient(to right,transparent,rgba(26,26,26,.8))"></div>
+</div>
+<div style="padding:40px;display:flex;flex-direction:column;justify-content:center;position:relative">
+<div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
+<div style="width:48px;height:48px;background:#F7C71A;border-radius:16px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(247,199,26,.3)"><iconify-icon icon="lucide:car" style="color:#1a1a1a;font-size:24px"></iconify-icon></div>
+<span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#F7C71A;background:rgba(247,199,26,.1);padding:4px 12px;border-radius:9999px">Lançamento</span>
+</div>
+<h2 class="font-display" style="font-size:clamp(1.8rem,3vw,2.5rem);font-weight:700;text-transform:uppercase;letter-spacing:-.01em;color:#fff">LifeMotor</h2>
+<p style="margin-top:12px;color:rgba(255,255,255,.5);line-height:1.7;font-size:.95rem">Sua manutenção sempre em dia. Organize o histórico de manutenções, preveja gastos futuros e nunca mais esqueça uma revisão.</p>
+<div style="margin-top:20px;display:flex;flex-wrap:wrap;gap:8px">
+<span style="font-size:10px;color:rgba(255,255,255,.4);background:rgba(255,255,255,.08);padding:4px 12px;border-radius:9999px">Carros</span>
+<span style="font-size:10px;color:rgba(255,255,255,.4);background:rgba(255,255,255,.08);padding:4px 12px;border-radius:9999px">Motos</span>
+<span style="font-size:10px;color:rgba(255,255,255,.4);background:rgba(255,255,255,.08);padding:4px 12px;border-radius:9999px">Bikes</span>
+<span style="font-size:10px;color:rgba(255,255,255,.4);background:rgba(255,255,255,.08);padding:4px 12px;border-radius:9999px">Embarcações</span>
+</div>
+<div style="margin-top:32px;display:inline-flex;align-items:center;gap:8px;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:#1a1a1a;background:#F7C71A;padding:12px 24px;border-radius:9999px;transition:all .3s">Ver mais <iconify-icon icon="lucide:arrow-right"></iconify-icon></div>
+</div>
+</div>
+</div>
+</a>
+</div>
+
+<!-- Grid futuros softwares -->
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px">
+<div class="sr" style="transition-delay:100ms;background:var(--cor-cinza-claro);border-radius:24px;overflow:hidden;border:2px dashed #ddd;opacity:.5">
+<div style="height:192px;background:#e0e0e0;display:flex;align-items:center;justify-content:center"><i class="fas fa-plus-circle" style="font-size:3rem;color:#bbb"></i></div>
+<div style="padding:24px"><div style="width:40px;height:40px;background:#e0e0e0;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:16px"><i class="fas fa-box" style="color:#bbb;font-size:1.2rem"></i></div><h3 class="font-display" style="font-size:1.1rem;color:#bbb;text-transform:uppercase;font-weight:600">Em breve</h3><p style="margin-top:8px;color:#bbb;font-size:.9rem">Novo software em desenvolvimento.</p></div>
+</div>
+<div class="sr" style="transition-delay:200ms;background:var(--cor-cinza-claro);border-radius:24px;overflow:hidden;border:2px dashed #ddd;opacity:.5">
+<div style="height:192px;background:#e0e0e0;display:flex;align-items:center;justify-content:center"><i class="fas fa-plus-circle" style="font-size:3rem;color:#bbb"></i></div>
+<div style="padding:24px"><div style="width:40px;height:40px;background:#e0e0e0;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:16px"><i class="fas fa-box" style="color:#bbb;font-size:1.2rem"></i></div><h3 class="font-display" style="font-size:1.1rem;color:#bbb;text-transform:uppercase;font-weight:600">Em breve</h3><p style="margin-top:8px;color:#bbb;font-size:.9rem">Novo software em desenvolvimento.</p></div>
+</div>
+<div class="sr" style="transition-delay:300ms;background:var(--cor-cinza-claro);border-radius:24px;overflow:hidden;border:2px dashed #ddd;opacity:.5">
+<div style="height:192px;background:#e0e0e0;display:flex;align-items:center;justify-content:center"><i class="fas fa-plus-circle" style="font-size:3rem;color:#bbb"></i></div>
+<div style="padding:24px"><div style="width:40px;height:40px;background:#e0e0e0;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:16px"><i class="fas fa-box" style="color:#bbb;font-size:1.2rem"></i></div><h3 class="font-display" style="font-size:1.1rem;color:#bbb;text-transform:uppercase;font-weight:600">Em breve</h3><p style="margin-top:8px;color:#bbb;font-size:.9rem">Novo software em desenvolvimento.</p></div>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- CTA -->
+<section style="padding:80px 0;background:var(--cor-preto)">
+<div class="container sr" style="text-align:center;max-width:700px;margin:0 auto;padding:0 20px">
+<h2 class="font-display" style="font-size:clamp(1.8rem,4vw,2.5rem);font-weight:700;text-transform:uppercase;color:#fff;letter-spacing:-.01em">Tem interesse em nossas<br><span class="tgb">soluções?</span></h2>
+<p style="margin-top:16px;color:rgba(255,255,255,.4)">Entre em contato e conheça mais sobre nosso trabalho.</p>
+<a href="index.html#contato" class="cta-button" style="margin-top:32px;display:inline-block">Fale Conosco</a>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background:var(--cor-preto);color:var(--cor-branco);text-align:center;padding:40px 0;border-top:1px solid rgba(255,255,255,.05)">
+<div class="container">
+<div style="font-size:1.5rem;font-weight:700;margin-bottom:16px">Crucial<span class="highlight"> Suporte</span></div>
+<p style="color:#ccc;font-size:.85rem">&copy; 2025 Crucial Suporte. Todos os direitos reservados.</p>
+<a href="index.html" style="color:rgba(255,255,255,.3);font-size:.8rem;text-decoration:none;display:inline-block;margin-top:8px">Voltar ao site principal</a>
+</div>
+</footer>
+
+<script>
+const nav=document.querySelector('header nav');window.addEventListener('scroll',()=>{nav.style.background=window.scrollY>50?'rgba(255,255,255,.95)':'var(--cor-branco)';nav.style.backdropFilter=window.scrollY>50?'blur(12px)':'none'});
+const srEls=document.querySelectorAll('.sr');const srObs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');srObs.unobserve(e.target)}})},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});srEls.forEach(el=>srObs.observe(el));
+</script>
+</body>
+</html>

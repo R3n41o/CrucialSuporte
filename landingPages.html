@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LifeMotor — Sua manutenção sempre em dia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'], display: ['Oswald', 'sans-serif'] }, colors: { brand: '#F7C71A', 'brand-dark': '#D4A90A', dark: '#1a1a1a', 'app-bg': '#E0E0E0' }, keyframes: { fadeIn: { from: { opacity: '0' }, to: { opacity: '1' } }, slideIn: { from: { opacity: '0', transform: 'translateY(30px)' }, to: { opacity: '1', transform: 'translateY(0)' } }, blurIn: { from: { opacity: '0', filter: 'blur(12px)' }, to: { opacity: '1', filter: 'blur(0)' } }, blob: { '0%': { transform: 'translate(0,0) scale(1)' }, '33%': { transform: 'translate(30px,-50px) scale(1.1)' }, '66%': { transform: 'translate(-20px,20px) scale(0.9)' }, '100%': { transform: 'translate(0,0) scale(1)' } }, float: { '0%,100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-16px)' } } }, animation: { fadeIn: 'fadeIn 0.8s ease-out both', slideIn: 'slideIn 0.8s cubic-bezier(0.16,1,0.3,1) both', blurIn: 'blurIn 1s ease-out both', blob: 'blob 7s infinite', float: 'float 6s ease-in-out infinite' } } } }
+    </script>
+    <style>
+        .d1 {
+            animation-delay: 100ms
+        }
+
+        .d2 {
+            animation-delay: 200ms
+        }
+
+        .d3 {
+            animation-delay: 300ms
+        }
+
+        .d5 {
+            animation-delay: 500ms
+        }
+
+        .d7 {
+            animation-delay: 700ms
+        }
+
+        .d1s {
+            animation-delay: 1s
+        }
+
+        .tgb {
+            background: linear-gradient(135deg, #F7C71A, #FF9500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, .85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px)
+        }
+
+        .p8 {
+            perspective: 800px
+        }
+
+        .ts3d {
+            transform-style: preserve-3d
+        }
+
+        .rx5 {
+            transform: rotateX(5deg)
+        }
+
+        .ch {
+            transition: all .3s ease
+        }
+
+        .ch:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px -12px rgba(0, 0, 0, .15)
+        }
+
+        .ns {
+            background: rgba(255, 255, 255, .95) !important;
+            backdrop-filter: blur(12px) !important;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, .08) !important
+        }
+
+        .mm {
+            transform: translateX(100%);
+            transition: transform .3s ease
+        }
+
+        .mm.open {
+            transform: translateX(0)
+        }
+
+        .sr {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all .8s cubic-bezier(.16, 1, .3, 1)
+        }
+
+        .sr.visible {
+            opacity: 1;
+            transform: translateY(0)
+        }
+
+        .cg {
+            background: #c8e6c9;
+            color: #2e7d32
+        }
+
+        .cr {
+            background: #ffcdd2;
+            color: #c62828
+        }
+
+        .co {
+            background: #ffe0b2;
+            color: #e65100
+        }
+
+        .cgr {
+            background: #e0e0e0;
+            color: #424242
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #e0e0e0
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #F7C71A;
+            border-radius: 3px
+        }
+    </style>
+</head>
+
+<body class="font-sans text-dark bg-white overflow-x-hidden">
+
+    <!-- NAV -->
+    <nav id="nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/80 backdrop-blur-sm">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 lg:h-20">
+                <a href="softwares.html" class="flex items-center gap-2.5 group">
+                    <div
+                        class="w-10 h-10 rounded-2xl bg-brand flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
+                        <iconify-icon icon="lucide:car" class="text-dark text-xl"></iconify-icon></div>
+                    <span class="font-display font-bold text-xl tracking-tight uppercase">LifeMotor</span>
+                </a>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#features"
+                        class="text-sm font-medium text-gray-500 hover:text-dark transition-colors">Recursos</a>
+                    <a href="#how" class="text-sm font-medium text-gray-500 hover:text-dark transition-colors">Como
+                        Funciona</a>
+                    <a href="#about"
+                        class="text-sm font-medium text-gray-500 hover:text-dark transition-colors">Sobre</a>
+                    <a href="#privacy"
+                        class="text-sm font-medium text-gray-500 hover:text-dark transition-colors">Privacidade</a>
+                </div>
+                <div class="hidden md:flex items-center gap-3">
+                    <button onclick="showToast('Tela de login aberta no app!','info')"
+                        class="text-sm font-medium text-gray-600 hover:text-dark px-4 py-2">Entrar</button>
+                    <button onclick="showToast('Tela de cadastro aberta no app!','info')"
+                        class="text-xs font-bold uppercase tracking-wider bg-brand text-dark px-6 py-3 rounded-full hover:bg-brand-dark transition-all shadow-md">Criar
+                        Conta</button>
+                </div>
+                <button onclick="toggleMenu()"
+                    class="md:hidden w-10 h-10 flex items-center justify-center rounded-xl hover:bg-gray-100"><iconify-icon
+                        icon="lucide:menu" class="text-2xl" id="bi"></iconify-icon></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mm" class="mm fixed top-0 right-0 bottom-0 w-80 max-w-[85vw] bg-white z-[60] shadow-2xl">
+        <div class="p-6">
+            <div class="flex items-center justify-between mb-10">
+                <span class="font-display font-bold text-lg tracking-tight uppercase">Menu</span>
+                <button onclick="toggleMenu()"
+                    class="w-10 h-10 flex items-center justify-center rounded-xl hover:bg-gray-100"><iconify-icon
+                        icon="lucide:x" class="text-2xl"></iconify-icon></button>
+            </div>
+            <div class="flex flex-col gap-1">
+                <a href="#features" onclick="toggleMenu()"
+                    class="text-base font-medium text-gray-600 hover:text-dark hover:bg-gray-50 px-4 py-3 rounded-xl">Recursos</a>
+                <a href="#how" onclick="toggleMenu()"
+                    class="text-base font-medium text-gray-600 hover:text-dark hover:bg-gray-50 px-4 py-3 rounded-xl">Como
+                    Funciona</a>
+                <a href="#about" onclick="toggleMenu()"
+                    class="text-base font-medium text-gray-600 hover:text-dark hover:bg-gray-50 px-4 py-3 rounded-xl">Sobre</a>
+                <a href="#privacy" onclick="toggleMenu()"
+                    class="text-base font-medium text-gray-600 hover:text-dark hover:bg-gray-50 px-4 py-3 rounded-xl">Privacidade</a>
+            </div>
+            <div class="mt-8 flex flex-col gap-3">
+                <button onclick="toggleMenu();showToast('Tela de login aberta no app!','info')"
+                    class="w-full text-sm font-medium text-dark border border-gray-200 px-6 py-3 rounded-full">Entrar</button>
+                <button onclick="toggleMenu();showToast('Tela de cadastro aberta no app!','info')"
+                    class="w-full text-xs font-bold uppercase tracking-wider bg-brand text-dark px-6 py-3 rounded-full hover:bg-brand-dark">Criar
+                    Conta</button>
+            </div>
+        </div>
+    </div>
+    <div id="mo" onclick="toggleMenu()" class="fixed inset-0 bg-black/30 z-[55] hidden"></div>
+
+    <!-- HERO -->
+    <section class="relative min-h-screen flex items-center overflow-hidden bg-app-bg">
+        <div class="absolute top-20 left-10 w-72 h-72 bg-brand/20 rounded-full blur-3xl animate-blob"></div>
+        <div class="absolute bottom-20 right-10 w-96 h-96 bg-orange-200/30 rounded-full blur-3xl animate-blob"
+            style="animation-delay:2s"></div>
+        <div class="absolute top-1/2 left-1/3 w-64 h-64 bg-yellow-100/40 rounded-full blur-3xl animate-blob"
+            style="animation-delay:4s"></div>
+        <div class="relative max-w-7xl mx-auto px-6 lg:px-8 pt-28 pb-20 w-full">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-6 flex flex-col items-start">
+                    <span
+                        class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-dark/60 bg-brand/20 border border-brand/30 px-4 py-2 rounded-full mb-6 animate-fadeIn d1">
+                        <iconify-icon icon="lucide:sparkles" class="text-brand-dark"></iconify-icon> Gerencie na nuvem
+                    </span>
+                    <h1
+                        class="font-display font-bold text-5xl lg:text-7xl xl:text-8xl leading-[0.85] tracking-tighter uppercase animate-slideIn d1">
+                        <span class="block">Sua</span>
+                        <span class="block tgb">manutenção</span>
+                        <span class="block">sempre em dia</span>
+                    </h1>
+                    <p class="mt-6 text-lg text-dark/50 font-light leading-relaxed max-w-md animate-slideIn d2">Cuide do
+                        seu veículo como ele cuida de você. Organize o histórico de manutenções, preveja gastos futuros
+                        e nunca mais esqueça uma revisão.</p>
+                    <div class="mt-8 flex flex-wrap gap-4 animate-slideIn d3">
+                        <button onclick="showToast('Tela de cadastro aberta no app!','info')"
+                            class="group inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider bg-brand text-dark px-8 py-4 rounded-full hover:bg-brand-dark transition-all shadow-lg shadow-brand/30">Criar
+                            Conta Grátis <iconify-icon icon="lucide:arrow-right"
+                                class="text-base group-hover:translate-x-1 transition-transform"></iconify-icon></button>
+                        <button onclick="showToast('Tela de login aberta no app!','info')"
+                            class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider border-2 border-dark/20 text-dark px-8 py-4 rounded-full hover:border-brand hover:text-brand-dark transition-all"><iconify-icon
+                                icon="lucide:log-in" class="text-base"></iconify-icon> Acessar</button>
+                    </div>
+                    <div class="mt-12 flex items-center gap-6 animate-fadeIn d7">
+                        <div class="flex -space-x-2">
+                            <img src="https://picsum.photos/seed/lmu1/40/40.jpg"
+                                class="w-8 h-8 rounded-full border-2 border-app-bg" alt="">
+                            <img src="https://picsum.photos/seed/lmu2/40/40.jpg"
+                                class="w-8 h-8 rounded-full border-2 border-app-bg" alt="">
+                            <img src="https://picsum.photos/seed/lmu3/40/40.jpg"
+                                class="w-8 h-8 rounded-full border-2 border-app-bg" alt="">
+                            <img src="https://picsum.photos/seed/lmu4/40/40.jpg"
+                                class="w-8 h-8 rounded-full border-2 border-app-bg" alt="">
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-0.5 text-brand text-xs"><iconify-icon
+                                    icon="lucide:star"></iconify-icon><iconify-icon
+                                    icon="lucide:star"></iconify-icon><iconify-icon
+                                    icon="lucide:star"></iconify-icon><iconify-icon
+                                    icon="lucide:star"></iconify-icon><iconify-icon icon="lucide:star"></iconify-icon>
+                            </div>
+                            <p class="text-xs text-dark/40 mt-0.5">Apaixonados por motores confiam em nós</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Phone Mockup -->
+                <div class="lg:col-span-6 flex justify-center animate-blurIn d5 p8">
+                    <div class="relative ts3d rx5">
+                        <div
+                            class="relative w-[280px] h-[580px] bg-dark rounded-[2.8rem] p-3 shadow-2xl shadow-brand/20">
+                            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-28 h-6 bg-dark rounded-b-2xl z-10">
+                            </div>
+                            <div class="w-full h-full bg-app-bg rounded-[2.2rem] overflow-hidden relative">
+                                <div class="flex items-center justify-between px-5 pt-9 pb-2"><span
+                                        class="text-[9px] font-semibold text-dark/60">9:41</span>
+                                    <div class="flex items-center gap-1 text-dark/60"><iconify-icon icon="lucide:signal"
+                                            class="text-[9px]"></iconify-icon><iconify-icon icon="lucide:wifi"
+                                            class="text-[9px]"></iconify-icon><iconify-icon icon="lucide:battery-full"
+                                            class="text-[9px]"></iconify-icon></div>
+                                </div>
+                                <div class="bg-white px-4 py-2.5 shadow-sm flex items-center justify-center"><span
+                                        class="text-sm font-bold text-dark/50">Meus Veículos</span></div>
+                                <div class="px-3 pt-3 space-y-2.5">
+                                    <div class="bg-white rounded-xl p-3 shadow-md">
+                                        <div class="flex items-center gap-3">
+                                            <div class="flex-1">
+                                                <p class="font-bold text-sm text-dark">Honda Civic</p>
+                                                <p class="text-[10px] text-dark/50">Honda Civic · ABC-1234</p>
+                                                <div
+                                                    class="mt-1.5 inline-block px-2 py-0.5 rounded cg text-[9px] font-bold">
+                                                    Em dia</div>
+                                            </div>
+                                            <div
+                                                class="w-16 h-16 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0">
+                                                <iconify-icon icon="lucide:car"
+                                                    class="text-2xl text-dark/30"></iconify-icon></div>
+                                        </div>
+                                    </div>
+                                    <div class="bg-white rounded-xl p-3 shadow-md">
+                                        <div class="flex items-center gap-3">
+                                            <div class="flex-1">
+                                                <p class="font-bold text-sm text-dark">Yamaha Fazer</p>
+                                                <p class="text-[10px] text-dark/50">Yamaha Fazer · XYZ-5678</p>
+                                                <div
+                                                    class="mt-1.5 inline-block px-2 py-0.5 rounded co text-[9px] font-bold">
+                                                    Próxima (3 dias)</div>
+                                            </div>
+                                            <div
+                                                class="w-16 h-16 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0">
+                                                <iconify-icon icon="lucide:bike"
+                                                    class="text-2xl text-dark/30"></iconify-icon></div>
+                                        </div>
+                                    </div>
+                                    <div class="bg-white rounded-xl p-3 shadow-md">
+                                        <div class="flex items-center gap-3">
+                                            <div class="flex-1">
+                                                <p class="font-bold text-sm text-dark">Fiat Uno</p>
+                                                <p class="text-[10px] text-dark/50">Fiat Uno · DEF-9012</p>
+                                                <div
+                                                    class="mt-1.5 inline-block px-2 py-0.5 rounded cr text-[9px] font-bold">
+                                                    Vencida!</div>
+                                            </div>
+                                            <div
+                                                class="w-16 h-16 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0">
+                                                <iconify-icon icon="lucide:car"
+                                                    class="text-2xl text-dark/30"></iconify-icon></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="absolute bottom-0 left-0 right-0 px-3 pb-3">
+                                    <div class="bg-brand rounded-2xl shadow-lg flex items-center justify-around py-2.5">
+                                        <iconify-icon icon="lucide:user"
+                                            class="text-dark/40 text-lg"></iconify-icon><iconify-icon
+                                            icon="lucide:calculator"
+                                            class="text-dark/40 text-lg"></iconify-icon><iconify-icon icon="lucide:home"
+                                            class="text-dark text-lg"></iconify-icon><iconify-icon
+                                            icon="lucide:file-copy"
+                                            class="text-dark/40 text-lg"></iconify-icon><iconify-icon
+                                            icon="lucide:notifications" class="text-dark/40 text-lg"></iconify-icon>
+                                    </div>
+                                </div>
+                                <div
+                                    class="absolute bottom-16 right-5 w-12 h-12 bg-brand rounded-full shadow-lg flex items-center justify-center">
+                                    <iconify-icon icon="lucide:add" class="text-dark text-xl"></iconify-icon></div>
+                            </div>
+                        </div>
+                        <div class="absolute -top-4 -right-8 w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center animate-float shadow-lg"
+                            style="animation-delay:.5s"><iconify-icon icon="lucide:check-circle-2"
+                                class="text-green-600 text-2xl"></iconify-icon></div>
+                        <div class="absolute -bottom-2 -left-10 w-14 h-14 bg-red-100 rounded-2xl flex items-center justify-center animate-float shadow-lg"
+                            style="animation-delay:1.5s"><iconify-icon icon="lucide:bell-ring"
+                                class="text-red-500 text-xl"></iconify-icon></div>
+                        <div class="absolute top-1/3 -left-14 w-12 h-12 bg-brand/20 rounded-xl flex items-center justify-center animate-float shadow-lg"
+                            style="animation-delay:2.5s"><iconify-icon icon="lucide:wallet"
+                                class="text-brand-dark text-lg"></iconify-icon></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-fadeIn d1s">
+            <span class="text-[10px] uppercase tracking-widest text-dark/30 font-medium">Rolar</span>
+            <div class="w-5 h-8 border-2 border-dark/20 rounded-full flex items-start justify-center p-1">
+                <div class="w-1 h-2 bg-dark/30 rounded-full animate-bounce"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features" class="py-24 lg:py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16 sr">
+                <span
+                    class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-brand-dark mb-4"><iconify-icon
+                        icon="lucide:layers" class="text-sm"></iconify-icon> Recursos</span>
+                <h2 class="font-display font-bold text-4xl lg:text-5xl tracking-tighter uppercase">Tudo que seu<br><span
+                        class="tgb">veículo precisa</span></h2>
+                <p class="mt-4 text-dark/50 font-light text-lg">Carro, moto, bike ou embarcação — o LifeMotor é seu
+                    parceiro na estrada.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 auto-rows-[minmax(220px,auto)]">
+                <div
+                    class="md:col-span-2 md:row-span-2 relative group bg-dark rounded-3xl p-8 lg:p-12 overflow-hidden ch sr">
+                    <img src="2076781527504523264.jpeg"
+                        class="absolute inset-0 w-full h-full object-cover opacity-25 group-hover:scale-105 transition-transform duration-700"
+                        alt="">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/80 to-transparent"></div>
+                    <div class="relative z-10 flex flex-col justify-end h-full">
+                        <div
+                            class="w-14 h-14 bg-brand/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <iconify-icon icon="lucide:car" class="text-brand text-2xl"></iconify-icon></div>
+                        <h3 class="font-display font-semibold text-2xl lg:text-3xl text-white tracking-tight uppercase">
+                            Meus Veículos</h3>
+                        <p class="mt-3 text-white/60 font-light max-w-md leading-relaxed">Cadastre todos os seus
+                            veículos em um só lugar. Acompanhe quilometragem, status e próximas manutenções.</p>
+                    </div>
+                </div>
+                <div class="relative group bg-red-50 rounded-3xl p-8 overflow-hidden ch border border-red-100 sr">
+                    <div
+                        class="w-12 h-12 bg-red-100 rounded-2xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+                        <iconify-icon icon="lucide:bell-ring" class="text-red-500 text-xl"></iconify-icon></div>
+                    <h3 class="font-display font-semibold text-xl text-dark tracking-tight uppercase">Alertas</h3>
+                    <p class="mt-2 text-dark/50 font-light text-sm leading-relaxed">Nunca mais esqueça uma troca de óleo
+                        ou revisão. Status em tempo real.</p>
+                    <div class="mt-4 flex gap-2"><span class="cg text-[10px] font-bold px-2 py-0.5 rounded">Em
+                            dia</span><span class="co text-[10px] font-bold px-2 py-0.5 rounded">Próxima</span><span
+                            class="cr text-[10px] font-bold px-2 py-0.5 rounded">Vencida</span></div>
+                </div>
+                <div class="relative group bg-brand/10 rounded-3xl p-8 overflow-hidden ch border border-brand/20 sr">
+                    <div
+                        class="w-12 h-12 bg-brand/20 rounded-2xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+                        <iconify-icon icon="lucide:calculator" class="text-brand-dark text-xl"></iconify-icon></div>
+                    <h3 class="font-display font-semibold text-xl text-dark tracking-tight uppercase">Calculadora</h3>
+                    <p class="mt-2 text-dark/50 font-light text-sm leading-relaxed">Preveja gastos futuros com
+                        manutenção. Planeje seu orçamento sem surpresas.</p>
+                </div>
+                <div class="relative group bg-app-bg rounded-3xl p-8 overflow-hidden ch sr">
+                    <div
+                        class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center mb-5 shadow-sm group-hover:scale-110 transition-transform">
+                        <iconify-icon icon="lucide:bar-chart-3" class="text-dark text-xl"></iconify-icon></div>
+                    <h3 class="font-display font-semibold text-xl text-dark tracking-tight uppercase">Relatórios</h3>
+                    <p class="mt-2 text-dark/50 font-light text-sm leading-relaxed">Visualize custos totais e por mês.
+                        Gráficos completos do histórico.</p>
+                </div>
+                <div class="relative group bg-green-50 rounded-3xl p-8 overflow-hidden ch border border-green-100 sr">
+                    <div
+                        class="w-12 h-12 bg-green-100 rounded-2xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+                        <iconify-icon icon="lucide:cloud" class="text-green-600 text-xl"></iconify-icon></div>
+                    <h3 class="font-display font-semibold text-xl text-dark tracking-tight uppercase">Sincronização</h3>
+                    <p class="mt-2 text-dark/50 font-light text-sm leading-relaxed">Dados sincronizados via Firebase.
+                        Acesse de qualquer dispositivo.</p>
+                </div>
+                <div class="relative group bg-orange-50 rounded-3xl p-8 overflow-hidden ch border border-orange-100 sr">
+                    <div
+                        class="w-12 h-12 bg-orange-100 rounded-2xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+                        <iconify-icon icon="lucide:upload" class="text-orange-600 text-xl"></iconify-icon></div>
+                    <h3 class="font-display font-semibold text-xl text-dark tracking-tight uppercase">Importar /
+                        Exportar</h3>
+                    <p class="mt-2 text-dark/50 font-light text-sm leading-relaxed">Importe via JSON ou exporte
+                        manutenções em PDF facilmente.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section id="how" class="py-24 lg:py-32 bg-app-bg relative overflow-hidden">
+        <div
+            class="absolute top-0 left-0 w-96 h-96 bg-brand/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2">
+        </div>
+        <div class="relative max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-20 sr">
+                <span
+                    class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-brand-dark mb-4"><iconify-icon
+                        icon="lucide:route" class="text-sm"></iconify-icon> Como Funciona</span>
+                <h2 class="font-display font-bold text-4xl lg:text-5xl tracking-tighter uppercase">Simples como<br><span
+                        class="tgb">dirigir</span></h2>
+            </div>
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="relative sr">
+                    <div class="text-center">
+                        <div
+                            class="w-16 h-16 bg-brand text-dark rounded-2xl flex items-center justify-center mx-auto mb-6 text-2xl font-display font-bold shadow-lg">
+                            1</div>
+                        <h3 class="font-display font-semibold text-lg tracking-tight uppercase">Crie sua conta</h3>
+                        <p class="mt-2 text-dark/50 font-light text-sm">Com email ou Google.</p>
+                    </div>
+                    <div
+                        class="hidden md:block absolute top-8 left-[calc(50%+40px)] w-[calc(100%-80px)] h-0.5 bg-gradient-to-r from-brand/40 to-brand/10">
+                    </div>
+                </div>
+                <div class="relative sr" style="transition-delay:150ms">
+                    <div class="text-center">
+                        <div
+                            class="w-16 h-16 bg-brand text-dark rounded-2xl flex items-center justify-center mx-auto mb-6 text-2xl font-display font-bold shadow-lg">
+                            2</div>
+                        <h3 class="font-display font-semibold text-lg tracking-tight uppercase">Adicione veículos</h3>
+                        <p class="mt-2 text-dark/50 font-light text-sm">Carro, moto, bike ou embarcação.</p>
+                    </div>
+                    <div
+                        class="hidden md:block absolute top-8 left-[calc(50%+40px)] w-[calc(100%-80px)] h-0.5 bg-gradient-to-r from-brand/20 to-brand/5">
+                    </div>
+                </div>
+                <div class="relative sr" style="transition-delay:300ms">
+                    <div class="text-center">
+                        <div
+                            class="w-16 h-16 bg-brand text-dark rounded-2xl flex items-center justify-center mx-auto mb-6 text-2xl font-display font-bold shadow-lg">
+                            3</div>
+                        <h3 class="font-display font-semibold text-lg tracking-tight uppercase">Registre manutenções
+                        </h3>
+                        <p class="mt-2 text-dark/50 font-light text-sm">Óleo, revisão, pneus — tudo documentado.</p>
+                    </div>
+                    <div
+                        class="hidden md:block absolute top-8 left-[calc(50%+40px)] w-[calc(100%-80px)] h-0.5 bg-gradient-to-r from-brand/10 to-transparent">
+                    </div>
+                </div>
+                <div class="sr" style="transition-delay:450ms">
+                    <div class="text-center">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-brand to-orange-400 text-dark rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                            <iconify-icon icon="lucide:check" class="text-2xl"></iconify-icon></div>
+                        <h3 class="font-display font-semibold text-lg tracking-tight uppercase">Receba alertas</h3>
+                        <p class="mt-2 text-dark/50 font-light text-sm">O app lembra por você. Sempre.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="py-20 bg-dark relative overflow-hidden">
+        <div
+            class="absolute inset-0 bg-[url('https://picsum.photos/seed/lm-stats/1600/600.jpg')] bg-cover bg-center opacity-10">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-r from-dark via-dark/95 to-dark"></div>
+        <div class="relative max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center sr">
+                    <div class="font-display font-bold text-4xl lg:text-5xl text-white tracking-tight counter"
+                        data-target="10000">0</div>
+                    <p class="mt-2 text-white/40 text-sm">Veículos Gerenciados</p>
+                </div>
+                <div class="text-center sr" style="transition-delay:150ms">
+                    <div class="font-display font-bold text-4xl lg:text-5xl text-white tracking-tight counter"
+                        data-target="50000">0</div>
+                    <p class="mt-2 text-white/40 text-sm">Manutenções Registradas</p>
+                </div>
+                <div class="text-center sr" style="transition-delay:300ms">
+                    <div class="font-display font-bold text-4xl lg:text-5xl text-brand tracking-tight counter"
+                        data-target="98">0</div>
+                    <p class="mt-2 text-white/40 text-sm">% Satisfação</p>
+                </div>
+                <div class="text-center sr" style="transition-delay:450ms">
+                    <div class="font-display font-bold text-4xl lg:text-5xl text-white tracking-tight counter"
+                        data-target="4">0</div>
+                    <p class="mt-2 text-white/40 text-sm">Tipos de Veículo</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="py-24 lg:py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="relative sr">
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl"><img
+                            src="2076781527504523264.jpeg"
+                            class="w-full h-[400px] lg:h-[500px] object-cover" alt="Sobre">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark/40 to-transparent"></div>
+                    </div>
+                    <div class="absolute -bottom-6 -right-6 glass rounded-2xl p-5 shadow-xl max-w-[220px]">
+                        <div class="flex items-center gap-3 mb-2">
+                            <div class="w-10 h-10 bg-brand/20 rounded-xl flex items-center justify-center"><iconify-icon
+                                    icon="lucide:heart" class="text-brand-dark text-lg"></iconify-icon></div><span
+                                class="font-display font-bold text-sm tracking-tight uppercase">Missão</span>
+                        </div>
+                        <p class="text-xs text-dark/60 leading-relaxed">Simplificar a vida de quem ama seu veículo.</p>
+                    </div>
+                </div>
+                <div class="sr" style="transition-delay:200ms">
+                    <span
+                        class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-brand-dark mb-4"><iconify-icon
+                            icon="lucide:info" class="text-sm"></iconify-icon> Sobre o LifeMotor</span>
+                    <h2 class="font-display font-bold text-3xl lg:text-4xl tracking-tighter uppercase leading-tight">
+                        Nascido para<br><span class="tgb">simplificar</span></h2>
+                    <p class="mt-6 text-dark/50 font-light leading-relaxed">O LifeMotor nasceu para simplificar a vida
+                        de quem ama seu veículo. Nossa missão é ajudar você a organizar o histórico de manutenções,
+                        prever gastos futuros e nunca mais esquecer uma troca de óleo ou revisão importante.</p>
+                    <p class="mt-4 text-dark/50 font-light leading-relaxed">Seja para o seu carro, moto, bike ou até
+                        embarcação, o LifeMotor é o seu parceiro na estrada.</p>
+                    <div class="mt-8 grid grid-cols-2 gap-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 bg-green-50 rounded-lg flex items-center justify-center"><iconify-icon
+                                    icon="lucide:check" class="text-green-600 text-sm"></iconify-icon></div><span
+                                class="text-sm text-dark/70">Carros</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 bg-green-50 rounded-lg flex items-center justify-center"><iconify-icon
+                                    icon="lucide:check" class="text-green-600 text-sm"></iconify-icon></div><span
+                                class="text-sm text-dark/70">Motos</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 bg-green-50 rounded-lg flex items-center justify-center"><iconify-icon
+                                    icon="lucide:check" class="text-green-600 text-sm"></iconify-icon></div><span
+                                class="text-sm text-dark/70">Bikes</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 bg-green-50 rounded-lg flex items-center justify-center"><iconify-icon
+                                    icon="lucide:check" class="text-green-600 text-sm"></iconify-icon></div><span
+                                class="text-sm text-dark/70">Embarcações</span>
+                        </div>
+                    </div>
+                    <p class="mt-8 text-xs text-dark/30 italic">"Desenvolvido para apaixonados por motores."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRIVACY -->
+    <section id="privacy" class="py-24 lg:py-32 bg-app-bg">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16 sr">
+                <span
+                    class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-brand-dark mb-4"><iconify-icon
+                        icon="lucide:shield-check" class="text-sm"></iconify-icon> Termos de Uso e Privacidade</span>
+                <a href="lifemotor-privacidade.html" class="group inline-block">
+                    <h2 class="font-display font-bold text-3xl lg:text-4xl tracking-tighter uppercase group-hover:underline decoration-brand decoration-2 underline-offset-4">Seus dados
+                        são<br><span class="tgb">seus</span></h2>
+                </a>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="bg-white rounded-2xl p-8 shadow-md ch sr">
+                    <div class="w-12 h-12 bg-blue-50 rounded-2xl flex items-center justify-center mb-5"><iconify-icon
+                            icon="lucide:database" class="text-blue-600 text-xl"></iconify-icon></div>
+                    <h3 class="font-display font-semibold text-lg tracking-tight uppercase">Coleta de Dados</h3>
+                    <p class="mt-3 text-dark/50 font-light text-sm leading-relaxed">Coletamos seu nome, e-mail e dados
+                        dos veículos para garantir o funcionamento das manutenções e alertas.</p>
+                </div>
+                <div class="bg-white rounded-2xl p-8 shadow-md ch sr" style="transition-delay:100ms">
+                    <div class="w-12 h-12 bg-purple-50 rounded-2xl flex items-center justify-center mb-5"><iconify-icon
+                            icon="lucide:cloud" class="text-purple-600 text-xl"></iconify-icon></div>
+                    <h3 class="font-display font-semibold text-lg tracking-tight uppercase">Armazenamento na Nuvem</h3>
+                    <p class="mt-3 text-dark/50 font-light text-sm leading-relaxed">Sincronizados de forma segura via
+                        Google Firebase, permitindo acesso em qualquer dispositivo.</p>
+                </div>
+                <div class="bg-white rounded-2xl p-8 shadow-md ch sr" style="transition-delay:200ms">
+                    <div class="w-12 h-12 bg-amber-50 rounded-2xl flex items-center justify-center mb-5"><iconify-icon
+                            icon="lucide:alert-triangle" class="text-amber-600 text-xl"></iconify-icon></div>
+                    <h3 class="font-display font-semibold text-lg tracking-tight uppercase">Responsabilidade</h3>
+                    <p class="mt-3 text-dark/50 font-light text-sm leading-relaxed">As datas e quilometragens inseridas
+                        são de responsabilidade do usuário. O app atua como assistente.</p>
+                </div>
+                <div class="bg-white rounded-2xl p-8 shadow-md ch sr" style="transition-delay:300ms">
+                    <div class="w-12 h-12 bg-green-50 rounded-2xl flex items-center justify-center mb-5"><iconify-icon
+                            icon="lucide:lock" class="text-green-600 text-xl"></iconify-icon></div>
+                    <h3 class="font-display font-semibold text-lg tracking-tight uppercase">Privacidade</h3>
+                    <p class="mt-3 text-dark/50 font-light text-sm leading-relaxed">Seus dados são privados e vinculados
+                        à sua conta. Não compartilhamos com terceiros.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-24 lg:py-32 bg-dark relative overflow-hidden">
+        <div class="absolute top-0 left-1/4 w-96 h-96 bg-brand/15 rounded-full blur-3xl"></div>
+        <div class="relative max-w-3xl mx-auto px-6 lg:px-8 text-center sr">
+            <div class="w-16 h-16 bg-brand/20 rounded-2xl flex items-center justify-center mx-auto mb-8"><iconify-icon
+                    icon="lucide:car" class="text-brand text-3xl"></iconify-icon></div>
+            <h2 class="font-display font-bold text-4xl lg:text-6xl tracking-tighter uppercase text-white leading-[0.9]">
+                Junte-se ao<br><span class="tgb">LifeMotor</span></h2>
+            <p class="mt-6 text-white/50 font-light text-lg max-w-md mx-auto">Preencha os dados para começar a gerenciar
+                seus veículos na nuvem.</p>
+            <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+                <button onclick="showToast('Tela de cadastro aberta no app!','info')"
+                    class="group inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider bg-brand text-dark px-8 py-4 rounded-full hover:bg-brand-dark transition-all shadow-xl">Criar
+                    Conta Grátis <iconify-icon icon="lucide:arrow-right"
+                        class="text-base group-hover:translate-x-1 transition-transform"></iconify-icon></button>
+                <button onclick="showToast('Tela de login aberta no app!','info')"
+                    class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider border-2 border-white/20 text-white px-8 py-4 rounded-full hover:border-brand/50 hover:text-brand transition-all"><iconify-icon
+                        icon="lucide:log-in" class="text-base"></iconify-icon> Acessar</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark border-t border-white/5 py-16">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-12">
+                <div class="md:col-span-2">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-10 h-10 rounded-2xl bg-brand flex items-center justify-center"><iconify-icon
+                                icon="lucide:car" class="text-dark text-xl"></iconify-icon></div><span
+                            class="font-display font-bold text-xl tracking-tight uppercase text-white">LifeMotor</span>
+                    </div>
+                    <p class="text-white/40 font-light text-sm leading-relaxed max-w-sm">Sua manutenção sempre em dia.
+                        Desenvolvido para apaixonados por motores.</p>
+                    <div class="mt-6 flex items-center gap-4">
+                        <a href="#"
+                            class="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-white/40 hover:bg-brand hover:text-dark transition-all"><iconify-icon
+                                icon="lucide:instagram" class="text-lg"></iconify-icon></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-white/40 hover:bg-brand hover:text-dark transition-all"><iconify-icon
+                                icon="lucide:twitter" class="text-lg"></iconify-icon></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-white/40 hover:bg-brand hover:text-dark transition-all"><iconify-icon
+                                icon="lucide:youtube" class="text-lg"></iconify-icon></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-xs font-bold uppercase tracking-widest text-white/30 mb-4">Navegação</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#features"
+                                class="text-sm text-white/50 hover:text-brand transition-colors">Recursos</a></li>
+                        <li><a href="#how" class="text-sm text-white/50 hover:text-brand transition-colors">Como
+                                Funciona</a></li>
+                        <li><a href="#about" class="text-sm text-white/50 hover:text-brand transition-colors">Sobre</a>
+                        </li>
+                        <li><a href="#privacy"
+                                class="text-sm text-white/50 hover:text-brand transition-colors">Privacidade</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xs font-bold uppercase tracking-widest text-white/30 mb-4">Legal</h4>
+                    <ul class="space-y-3">
+                        <li><a href="lifemotor-privacidade.html" class="text-sm text-white/50 hover:text-brand transition-colors">Termos de
+                                Uso</a></li>
+                        <li><a href="lifemotor-privacidade.html" class="text-sm text-white/50 hover:text-brand transition-colors">Política de
+                                Privacidade</a></li>
+                        <li><a href="#" class="text-sm text-white/50 hover:text-brand transition-colors">Contato</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
+                <p class="text-xs text-white/30">&copy; 2025 LifeMotor. Todos os direitos reservados.</p>
+                <p class="text-xs text-white/20">Feito com <iconify-icon icon="lucide:heart"
+                        class="text-brand text-[10px] inline-block"></iconify-icon> para apaixonados por motores</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- TOAST -->
+    <div id="toast"
+        class="fixed bottom-6 left-1/2 -translate-x-1/2 z-[80] flex items-center gap-3 bg-dark text-white px-6 py-4 rounded-2xl shadow-2xl max-w-sm toast">
+        <iconify-icon id="toastIco" icon="lucide:check-circle-2"
+            class="text-green-400 text-xl flex-shrink-0"></iconify-icon>
+        <span id="toastMsg" class="text-sm font-medium"></span>
+    </div>
+
+    <script>
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => { nav.classList.toggle('ns', window.scrollY > 50) });
+
+        function toggleMenu() {
+            const m = document.getElementById('mm'), o = document.getElementById('mo'), i = document.getElementById('bi'), open = m.classList.contains('open');
+            if (open) { m.classList.remove('open'); o.classList.add('hidden'); i.setAttribute('icon', 'lucide:menu'); document.body.style.overflow = '' }
+            else { m.classList.add('open'); o.classList.remove('hidden'); i.setAttribute('icon', 'lucide:x'); document.body.style.overflow = 'hidden' }
+        }
+
+        let toastTimer;
+        function showToast(msg, type) {
+            const t = document.getElementById('toast'), ico = document.getElementById('toastIco'), m = document.getElementById('toastMsg');
+            m.textContent = msg;
+            ico.setAttribute('icon', type === 'error' ? 'lucide:alert-circle' : 'lucide:info');
+            ico.className = (type === 'error' ? 'text-red-400' : 'text-brand') + ' text-xl flex-shrink-0';
+            t.classList.add('show'); clearTimeout(toastTimer); toastTimer = setTimeout(() => t.classList.remove('show'), 3500);
+        }
+
+        const srEls = document.querySelectorAll('.sr');
+        const srObs = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); srObs.unobserve(e.target) } }) }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+        srEls.forEach(el => srObs.observe(el));
+
+        const cts = document.querySelectorAll('.counter');
+        const ctObs = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { animC(e.target, +e.target.dataset.target); ctObs.unobserve(e.target) } }) }, { threshold: 0.5 });
+        cts.forEach(c => ctObs.observe(c));
+
+        function animC(el, target) {
+            const dur = 2000, st = performance.now();
+            function upd(now) {
+                const p = Math.min((now - st) / dur, 1), ease = 1 - Math.pow(1 - p, 3), val = Math.floor(ease * target);
+                el.textContent = target >= 1000 ? val.toLocaleString('pt-BR') + '+' : target === 98 ? val + '%' : val + '+'; if (p < 1) requestAnimationFrame(upd)
+            }
+            requestAnimationFrame(upd)
+        }
+    </script>
+</body>
+
+</html>
